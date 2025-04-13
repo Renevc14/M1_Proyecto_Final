@@ -7,8 +7,8 @@ Permite a los usuarios registrarse, iniciar sesión y gestionar sus tareas: crea
 
 ## 📦 Tecnologías utilizadas
 
-- **Frontend**: React, Vite, Axios, React Router DOM, CSS Modules
-- **Backend**: Node.js, Express, Sequelize, PostgreSQL, JWT, bcrypt
+- **Frontend**: React, Vite, Axios, React Router DOM, CSS Modules  
+- **Backend**: Node.js, Express, Sequelize, PostgreSQL, JWT, bcrypt  
 - **Base de datos**: PostgreSQL
 
 ---
@@ -20,31 +20,31 @@ Permite a los usuarios registrarse, iniciar sesión y gestionar sus tareas: crea
 ```bash
 git clone https://github.com/tu-usuario/M1_Proyecto_Final.git
 cd M1_Proyecto_Final
-
----
-
-## 🚀 ¿Cómo ejecutar el proyecto?
-
-### 2. Ejecutar el backend
-
-```bash
+2. Ejecutar el backend
+bash
+Copy
+Edit
 cd backend
 npm install
 npm run start
-
-### 2. Ejecutar el backend
-
-```bash
-cd frontend
-npm install
-npm run dev
-
-Nota: El frontend corre por defecto en http://localhost:5173
 🔐 Asegúrate de tener configurado tu archivo .env con las variables necesarias como:
 
 JWT_SECRET
+
 JWT_EXPIRATION
+
 FRONTEND_ENDPOINT
+
+DATABASE_URL o configuración de conexión
+
+3. Ejecutar el frontend
+bash
+Copy
+Edit
+cd ../frontend
+npm install
+npm run dev
+📍 El frontend corre por defecto en: http://localhost:5173
 
 📝 Funcionalidades principales
 ✅ Registro y login con autenticación JWT
