@@ -1,16 +1,10 @@
+// src/components/TaskList.jsx
 import TaskCard from "./TaskCard";
+import styles from "../styles/TaskList.module.css";
 
 function TaskList({ tasks, onDelete }) {
     return (
-        <div
-            style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "1rem",
-                padding: "1rem",
-                width: "100%",
-            }}
-        >
+        <div className={styles.grid}>
             {tasks.map((task) => (
                 <TaskCard key={task.id} task={task} onDelete={onDelete} />
             ))}

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
+import styles from '../styles/CreateTask.module.css';
+
 
 function CreateTask() {
 const [title, setTitle] = useState('');
@@ -29,7 +31,8 @@ const handleSubmit = async (e) => {
 };
 
 return (
-    <div style={{ maxWidth: '500px', margin: '2rem auto' }}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
     <h2>Nueva tarea</h2>
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <input
@@ -59,6 +62,7 @@ return (
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <button type="submit">Crear tarea</button>
     </form>
+    </div>
     </div>
     );
 }
