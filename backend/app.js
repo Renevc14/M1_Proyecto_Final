@@ -11,7 +11,7 @@ const taskRoutes = require('./routes/taskRoutes');
 const app = express();
 
 const corsOptions = {
-	origin: process.env.FRONTEND_ENDPOINT || 'http://localhost:4000',
+	origin: process.env.FRONTEND_ENDPOINT || 'http://localhost:5173',
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
 };
