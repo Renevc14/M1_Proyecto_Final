@@ -18,8 +18,13 @@ const handleSubmit = async (e) => {
     localStorage.setItem('token', res.data.token);
     navigate('/tasks');
     } catch (err) {
-    console.error(err);
-    setError('Credenciales incorrectas o error de servidor');
+      console.error(err);
+      console.error('Login error:', err);
+      if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('Error de servidor');
+      }
     }
 };
 
