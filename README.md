@@ -20,15 +20,14 @@ Permite a los usuarios registrarse, iniciar sesión y gestionar sus tareas: crea
 ```bash
 git clone https://github.com/tu-usuario/M1_Proyecto_Final.git
 cd M1_Proyecto_Final
-2. Ejecutar el backend
-bash
-Copy
-Edit
+```
+### 2. Ejecutar el backend
+```bash
 cd backend
 npm install
 npm run start
+```
 🔐 Asegúrate de tener configurado tu archivo .env con las variables necesarias como:
-
 JWT_SECRET
 
 JWT_EXPIRATION
@@ -37,13 +36,12 @@ FRONTEND_ENDPOINT
 
 DATABASE_URL o configuración de conexión
 
-3. Ejecutar el frontend
-bash
-Copy
-Edit
+### 3. Ejecutar el frontend
+```bash
 cd ../frontend
 npm install
 npm run dev
+```
 📍 El frontend corre por defecto en: http://localhost:5173
 
 📝 Funcionalidades principales
