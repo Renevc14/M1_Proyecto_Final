@@ -1,38 +1,43 @@
 import { useEffect, useState } from 'react';
 import api from '../api/api';
 import TaskList from '../components/TaskList';
+import { Link } from 'react-router-dom';
 
 function Tasks() {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
+const [tasks, setTasks] = useState([]);
+const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
     const fetchTasks = async () => {
-      try {
+    try {
         const res = await api.get('/tasks');
         setTasks(res.data.tasks);
-      } catch (error) {
+    } catch (error) {
         console.error('Error fetching tasks:', error);
-      } finally {
+    } finally {
         setLoading(false);
-      }
+    }
     };
 
     fetchTasks();
-  }, []);
+}, []);
 
-  if (loading) return <p>Cargando tareas...</p>;
+if (loading) return <p>Cargando tareas...</p>;
 
-  return (
+return (
     <div style={{ padding: '2rem' }}>
-      <h2>Mis tareas</h2>
-      {tasks.length > 0 ? (
+    <h2>Mis tareas</h2>
+    <Link to="/tasks/new">
+            <button style={{ marginBottom: '1rem' }}>➕ Nueva tarea</button>
+            </Link>
+    {tasks.length > 0 ? (
         <TaskList tasks={tasks} />
-      ) : (
+    ) : (
         <p>No hay tareas disponibles.</p>
-      )}
+    )}
     </div>
-  );
+    
+);
 }
 
 export default Tasks;
