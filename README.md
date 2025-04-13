@@ -54,3 +54,21 @@ npm run dev
 ✅ Protección de rutas mediante token
 
 ✅ Diseño responsivo con modo oscuro
+
+---
+
+## 📡 API - Endpoints principales
+
+| Método | Endpoint             | Descripción                         | Autenticación |
+|--------|----------------------|-------------------------------------|---------------|
+| POST   | `/api/auth/register` | Registro de nuevo usuario           | ❌ No         |
+| POST   | `/api/auth/login`    | Login de usuario                    | ❌ No         |
+| GET    | `/api/user`          | Obtener datos del usuario logueado  | ✅ Sí         |
+| GET    | `/api/tasks`         | Obtener todas las tareas del usuario| ✅ Sí         |
+| GET    | `/api/tasks/:id`     | Obtener una tarea por ID            | ✅ Sí         |
+| POST   | `/api/tasks`         | Crear nueva tarea                   | ✅ Sí         |
+| PUT    | `/api/tasks/:id`     | Actualizar tarea                    | ✅ Sí         |
+| DELETE | `/api/tasks/:id`     | Eliminar tarea (solo si completada) | ✅ Sí         |
+
+> 🔐 Las rutas con autenticación requieren un token JWT en el header:  
+> `Authorization: Bearer <token>`
