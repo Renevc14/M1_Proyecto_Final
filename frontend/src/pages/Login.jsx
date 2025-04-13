@@ -29,15 +29,16 @@ const handleSubmit = async (e) => {
 };
 
 return (
+  <div className={styles.wrapper}>
     <div className={styles.container}>
-    <h2>Iniciar sesión</h2>
-    <form onSubmit={handleSubmit} className={styles.form}>
+      <h2>Iniciar sesión</h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
-        type="email"
-        placeholder="Correo"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
+          type="email"
+          placeholder="Correo"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
           type="password"
@@ -50,7 +51,7 @@ return (
         <button type="submit">Entrar</button>
       </form>
     </div>
-  );
+  </div>
+);
 }
-
 export default Login;

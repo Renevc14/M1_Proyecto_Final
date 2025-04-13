@@ -1,6 +1,6 @@
 const { Op } = require('sequelize');
-const { Task } = require('../../../Gestor-Tareas-FullStack/backend/models');
-const { STATUS } = require('../../../Gestor-Tareas-FullStack/backend/constants/constants');
+const { Task } = require('../models');
+const { STATUS } = require('../constants/constants');
 
 const statusTransitionRules = {
 	[STATUS.COMPLETED]: [],
