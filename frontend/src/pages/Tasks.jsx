@@ -25,7 +25,10 @@ useEffect(() => {
 if (loading) return <p>Cargando tareas...</p>;
 
 return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        width: '100%', }}>
     <h2>Mis tareas</h2>
     <Link to="/tasks/new">
             <button style={{ marginBottom: '1rem' }}>➕ Nueva tarea</button>
