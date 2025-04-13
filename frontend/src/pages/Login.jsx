@@ -4,35 +4,35 @@ import api from '../api/api';
 import styles from '../styles/Login.module.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [error, setError] = useState('');
+const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     try {
-      const res = await api.post('/auth/login', { email, password });
-      localStorage.setItem('token', res.data.token);
-      navigate('/tasks');
+    const res = await api.post('/auth/login', { email, password });
+    localStorage.setItem('token', res.data.token);
+    navigate('/tasks');
     } catch (err) {
-      console.error(err);
-      setError('Credenciales incorrectas o error de servidor');
+    console.error(err);
+    setError('Credenciales incorrectas o error de servidor');
     }
-  };
+};
 
-  return (
+return (
     <div className={styles.container}>
-      <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <h2>Iniciar sesión</h2>
+    <form onSubmit={handleSubmit} className={styles.form}>
         <input
-          type="email"
-          placeholder="Correo"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+        type="email"
+        placeholder="Correo"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
         />
         <input
           type="password"
