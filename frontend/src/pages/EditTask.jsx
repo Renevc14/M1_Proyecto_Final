@@ -34,6 +34,10 @@ function EditTask() {
         setError('');
 
         try {
+            const trimmedTask = {
+                ...task,
+                deadline: task.deadline.split('T')[0],
+            };
             await api.put(`/tasks/${id}`, task);
             navigate('/tasks');
         } catch (err) {
@@ -72,9 +76,9 @@ function EditTask() {
                     value={task.status}
                     onChange={(e) => handleChange('status', e.target.value)}
                 >
-                    <option value="PENDING">Pendiente</option>
-                    <option value="IN_PROGRESS">En progreso</option>
-                    <option value="COMPLETED">Completada</option>
+                    <option value="pending">Pendiente</option>
+                    <option value="in_progress">En progreso</option>
+                    <option value="completed">Completada</option>
                 </select>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 <button type="submit">Guardar cambios</button>
